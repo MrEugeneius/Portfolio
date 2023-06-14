@@ -21,7 +21,9 @@ body{
 }
 .up__header{
 	width: 100%;
-	background-color: #5361FF;
+    background-color: #5361FF;
+    position: relative;
+    margin: auto;
 }
 .header{
 	width: 100%;
@@ -33,13 +35,13 @@ body{
     justify-content: center;
 }
 .up__menu{
-	width: 800px;
-	display: flex;
-	
-	background-color:#5361FF;
-	align-items: center;
-
-	margin: auto;
+	width: 100%;
+    display: flex;
+    background-color: #5361FF;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+    justify-content: center;
 }
 .name{
 	font-size: 10px;
@@ -417,16 +419,7 @@ input[type="submit"]:hover {
 	text-decoration: none;
 }
 
-.fixed {
-    position: fixed;
-    top: 0;
-    /* left: 85px; */
-    width: 100%;
-    display: flex;
-    transition: top 0.3s ease-in-out;
-    justify-content: center;
-    z-index: 999;
-}
+
 
 
 
