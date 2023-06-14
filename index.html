@@ -295,20 +295,6 @@
 
 
 
-    // Получаем элемент меню
-var menu = document.querySelector('.up__menu');
-
-// Получаем начальное положение меню
-var menuOffsetTop = menu.offsetTop;
-
-// Добавляем класс "fixed" к меню при прокрутке страницы
-window.addEventListener('scroll', function() {
-  if (window.pageYOffset >= menuOffsetTop) {
-    menu.classList.add('fixed');
-  } else {
-    menu.classList.remove('fixed');
-  }
-});
 
 </script>
 
