@@ -13,17 +13,18 @@
 <div class="wrapper">
 	<div class="page">
 		<div class="up__header">
-			<div class="header">
-				<div class="up__menu">
-					<p class="name">Mr. Eugene</p>
-					<div class="menu">
-						<a class="link" href="#">HOME</a>
-						<a class="link" href="#about">ABOUT</a>
-						<a class="link" href="#skills">SKILLS</a>
-						<a class="link" href="#portfolio">PORTFOLIO</a>
-						<a class="link" href="#contact">CONTACT</a>
-					</div>
+			<div class="up__menu">
+				<p class="name">Mr. Eugene</p>
+				<div class="menu">
+					<a class="link" href="#header">HOME</a>
+					<a class="link" href="#about">ABOUT</a>
+					<a class="link" href="#skills">SKILLS</a>
+					<a class="link" href="#portfolio">PORTFOLIO</a>
+					<a class="link" href="#contact">CONTACT</a>
 				</div>
+			</div>
+
+			<div class="header" id="header">
 				<div class="header__content">
 					<div class="h1">
 						<p class="h1__text">HE</p>
@@ -216,7 +217,7 @@
 				<div class="footer__box2">
 					<p class="footer__box1__t1">EXPLORE</p>
 					<div class="footer__box2__menu">
-						<a href="#" class="footer__box1__link link">HOME</a>
+						<a href="#header" class="footer__box1__link link">HOME</a>
 						<a href="#about" class="footer__box1__link link">ABOUT</a>
 						<a href="#skills" class="footer__box1__link link">SKILLS</a>
 						<a href="#portfolio" class="footer__box1__link link">PORTFOLIO</a>
@@ -291,6 +292,24 @@
             behavior: 'smooth'
         });
     }
+
+
+
+    // Получаем элемент меню
+var menu = document.querySelector('.up__menu');
+
+// Получаем начальное положение меню
+var menuOffsetTop = menu.offsetTop;
+
+// Добавляем класс "fixed" к меню при прокрутке страницы
+window.addEventListener('scroll', function() {
+  if (window.pageYOffset >= menuOffsetTop) {
+    menu.classList.add('fixed');
+  } else {
+    menu.classList.remove('fixed');
+  }
+});
+
 </script>
 
 </body>
