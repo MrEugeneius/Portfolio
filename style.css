@@ -7,6 +7,7 @@ body{
 	opacity: 0;
     transition: opacity 1s ease-in-out;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .wrapper{
@@ -24,9 +25,12 @@ body{
 }
 .header{
 	width: 100%;
-	height: 480px;
-	background-color: #5361FF;
-	margin: auto;
+    height: 480px;
+    background-color: #5361FF;
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 .up__menu{
 	width: 800px;
@@ -67,16 +71,19 @@ body{
 }
 .header__content{
 	width: 800px;
-	height: 100%;
-	margin: auto;
-
-	display: flex;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    display: flex;
 }
 .h1{
 	width: 275px;
-	height: 192px;
-	margin: 60px 0 0 0px;
-	line-height: 130px;
+    height: 192px;
+    margin: 60px 0 0 0px;
+    line-height: 130px;
+    position: absolute;
+    top: 60px;
+    z-index: 0;
 }
 .h1__text, .h1__text_second{
 	height: 91px;
@@ -90,8 +97,12 @@ body{
 }
 .Eugene{
 	width: 300px;
-	height: 400px;
-	margin: 30px 0 0 207px;
+    height: 400px;
+    margin: 30px 0 0 207px;
+    position: absolute;
+    bottom: 0;
+    left: 207px;
+    z-index: 0;
 }
 .about{
 	width: 800px;
@@ -406,3 +417,41 @@ input[type="submit"]:hover {
 	text-decoration: none;
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+    /* left: 85px; */
+    width: 100%;
+    display: flex;
+    transition: top 0.3s ease-in-out;
+    justify-content: center;
+    z-index: 999;
+}
+
+
+
+/* Для WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Для Firefox */
+/* Для того, чтобы скроллбар был видимым в Firefox,
+   необходимо установить "layout.css.scrollbar-width.enabled" в "true" в about:config */
+/* Вы можете пропустить этот блок, если не нужно стилизовать скроллбар в Firefox */
+/* Может потребоваться дополнительная стилизация в зависимости от версии Firefox */
+/* Я привожу пример для Firefox 64+ */
+scrollbar-color: #888 #f1f1f1;
+scrollbar-width: thin;
